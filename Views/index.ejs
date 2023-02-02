@@ -4,13 +4,26 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Projeto 01</title>
+    <title>Lista de tarefas | Projeto 1</title>
+    <link rel="stylesheet" href="../public/style.css">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 
 <body>
-    <h2>Olá <%= nome %> </h2>
+    <div class="tarefas">
+        <form method="post">
+            <input type="text" name="tarefa" />
+            <input type="submit" name="acao" value="inserir" />
+        </form>
+
+        <% for(let i = 0 ; i < tarefasList.length; i++){ %>
+
+        <p> <%= tarefasList[i]%> | <a href="/deletar/<%= i%>">X</a> </p>
+
+        <% } %>
+
+    </div>
 </body>
 
 </html>
